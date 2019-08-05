@@ -8,12 +8,12 @@ main = Blueprint('main', __name__)
 def index():
     return render_template('index.html')
 
+
 @main.route("/secret")
 @login_required
 @check_confirmed
 def secret():
     return "SECRET PAGE"
-
 
 
 @main.app_errorhandler(404)

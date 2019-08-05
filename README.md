@@ -16,9 +16,35 @@ Use the below JSON object and simply replace the values with ones specific to yo
     "MAIL_USERNAME": "flask_template_email@gmail.com",
     "MAIL_PASSWORD": "password",
     "MAIL_SUBJECT_PREFIX": "[Flask Template]",
-    "MAIL_SENDER":  "Admin <flask_templates@gmail.com>"
+    "MAIL_SENDER":  "Admin <flask_templates@gmail.com>",
+    "DEV_DATABASE_URL": "postgresql://dev:dev@localhost/flask_template_dev",
+    "TEST_DATABASE_URL": "postgresql://dev:dev@localhost/flask_template_test"
 }
 
+Note that the database URLs for Dev and Test should be updated with the user/password and the database name for the database you build like below:
+
+```
+"postgresql://{username}:{password}@localhost/{database_name}"
+```
+
+### Create postgres DBs for dev and test
+From the psql command line use:
+
+```
+{user}=> create database flask_template_dev;
+{user}=> create database flask_template_test;
+```
+
+Or replace with whatever you'd like to use to name the database.
+
+Then, back in the terminal, creates the tables:
+
+```
+$ flask shell
+
+>>> db.create_all()
+>>> exit()
+```
 
 # Deployment
 

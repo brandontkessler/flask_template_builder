@@ -31,19 +31,15 @@ class Config:
 
 class DevelopmentConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = config.get('DEV_DATABASE_URL') or \
-        'sqlite:///' + os.path.join(basedir, 'data-dev.sqlite')
-
+    SQLALCHEMY_DATABASE_URI = config.get('DEV_DATABASE_URL')
 
 class TestingConfig(Config):
     TESTING = True
-    SQLALCHEMY_DATABASE_URI = config.get('TEST_DATABASE_URL') or \
-        'sqlite://'
+    SQLALCHEMY_DATABASE_URI = config.get('TEST_DATABASE_URL')
 
 
 class ProductionConfig(Config):
-    SQLALCHEMY_DATABASE_URI = config.get('DATABASE_URL') or \
-        'sqlite:///' + os.path.join(basedir, 'data.sqlite')
+    SQLALCHEMY_DATABASE_URI = config.get('PRODUCTION_DATABASE_URL')
 
 
 config = {
