@@ -11,6 +11,8 @@ Follow the below steps to configure a clone of this repo to run as a flask appli
 ### Configuration requires a file: dev_config.json
 This gets stored in project root level directory.
 Use the below JSON object and simply replace the values with ones specific to your app.
+
+```
 {
     "SECRET_KEY": "secret-ish_key",
     "MAIL_USERNAME": "flask_template_email@gmail.com",
@@ -20,6 +22,7 @@ Use the below JSON object and simply replace the values with ones specific to yo
     "DEV_DATABASE_URL": "postgresql://dev:dev@localhost/flask_template_dev",
     "TEST_DATABASE_URL": "postgresql://dev:dev@localhost/flask_template_test"
 }
+```
 
 Note that the database URLs for Dev and Test should be updated with the user/password and the database name for the database you build like below:
 

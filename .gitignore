@@ -1,8 +1,6 @@
 # Virtual Environment
 venv/
 
-# Dev configuration
-dev_config.json
 
 # SQLite databases
 *.sqlite
